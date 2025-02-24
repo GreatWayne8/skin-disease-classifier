@@ -1,0 +1,81 @@
+# Skin Disease Classifier
+
+## Overview
+This is a web-based application that classifies skin diseases using a deep learning model. The model is built using **ReXNet-150**, a convolutional neural network (CNN) optimized for image classification. The web app is powered by **Flask** as the backend and allows users to upload images for prediction.
+
+## Features
+- Upload an image of a skin condition.
+- The model processes the image and predicts the most likely disease.
+- Returns a **confidence score** for the prediction.
+
+## Technologies Used
+- **Backend**: Flask (Python)
+- **Frontend**: HTML, CSS, JavaScript
+- **Machine Learning**: PyTorch, ReXNet-150
+- **Environment**: Ubuntu, Node.js (for frontend styling with Tailwind CSS)
+
+## Installation & Setup
+### 1. Clone the Repository
+```bash
+git clone https://github.com/GreatWayne8/skin-disease.git
+cd skin_disease
+```
+
+### 2. Set Up a Virtual Environment (Python)
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Backend (Flask API)
+```bash
+python app.py
+```
+
+### 5. Run the Frontend (if applicable)
+Navigate to the frontend folder and install dependencies:
+```bash
+cd frontend
+npm install
+npm run dev  # Runs the frontend in development mode
+```
+
+## How It Works
+1. User uploads an image of a skin disease.
+2. The Flask backend processes the image and passes it through the **ReXNet-150 model**.
+3. The model predicts the disease and returns the result to the frontend.
+4. The frontend displays the prediction with a confidence score.
+
+## API Endpoints
+| Method | Endpoint | Description |
+|--------|----------|--------------|
+| POST | `/upload` | Upload an image and get a prediction |
+
+## Common Issues & Solutions
+- **Tailwind CSS not working?**
+  ```bash
+  rm -rf node_modules package-lock.json
+  npm install
+  ```
+- **Model loading issues?**
+  Ensure that the `saved_models/` directory contains the trained model weights.
+
+## Future Improvements
+- Add more skin disease categories for better accuracy.
+- Implement **Grad-CAM** for heatmap visualizations.
+- Deploy the app using **Docker** and **Cloud Services**.
+
+## Contributors
+- **GreatWayne8** ([@GreatWayne8](https://github.com/GreatWayne8))
+
+## License
+This project is open-source under the MIT License.
+
+---
+*Happy Coding! 🚀*
+
